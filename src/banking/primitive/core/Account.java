@@ -69,6 +69,11 @@ public abstract class Account implements java.io.Serializable {
         state = s;
     }
 
+  /**
+   * This is the main method which makes use of addNum method.
+   * Returns a string with the account type, name, balance, and state (open or close)
+   * @return String with the account type, name on the account, balance, and state
+   */
     public String toString() {
         return "Account " + name + " has $" + balance + "and is " + getState()
                 + "\n";
