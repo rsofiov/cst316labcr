@@ -1,5 +1,14 @@
 package banking.primitive.core;
 
+/**
+Class: Savings
+
+Description: A bank account for savings. 
+	- Deposits to a savings account have a $0.50 transaction fee
+	- Withdrawals will cost $1.00 after the first 3 withdrawals.
+	  Any withdrawals from an account with insufficient funds will
+	  be subject to overdraft.
+*/
 public class Savings extends Account {
 	private static final long serialVersionUID = 111L;
 	private int numWithdraws = 0;
