@@ -67,7 +67,13 @@ class ServerSolution implements AccountServer {
 		}
 		return true;
 	}
-
+/**
+ *  Inputs: Type of account, Name, Balance 
+ *  Returns:Boolean statement (True or False) 
+ * 
+ *  Description:The method checks that a new account doesn't start with a negative 
+ *  blanace (because it is not possible), and if so it throws an exception 
+ */
 	public boolean newAccount(String type, String name, float balance) 
 		throws IllegalArgumentException {
 		
