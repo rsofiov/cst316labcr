@@ -1,5 +1,14 @@
 package banking.primitive.core;
 
+/**
+Class: Savings	
+
+Description: A bank account for savings.
+	- For every deposit, $0.50 is charged
+	- After 3 withdrawals, $1.00 is charged. If the
+	  user has insufficient funds, the account will
+	  result in overdraft.
+*/
 public class Savings extends Account {
 	private static final long serialVersionUID = 111L;
 	private int numWithdraws = 0;
