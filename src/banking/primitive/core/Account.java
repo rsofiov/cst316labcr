@@ -9,7 +9,6 @@ public abstract class Account implements java.io.Serializable {
 
     protected float balance = 0.0F;
     protected String name;
-    private State state;
 
     protected Account(String n) {
         name = n;
@@ -22,18 +21,24 @@ public abstract class Account implements java.io.Serializable {
     }
 
     /**
-     * @return name of the Account
-     */
-    public final String getName() {
-        return name;
-    }
-
-    /**
      * @return balance in the Account
      */
     public final float getBalance() {
         return balance;
     }
+    
+    /**
+     * @return name of the Account
+     */
+    public final String getName() {
+        return name;
+    }
+    
+    /**
+     * @return either "Checking" or "Savings"
+     */
+    public abstract String getType();
+
 
     /**
      * Adds money to an account. May not be done if the account is CLOSED
@@ -46,6 +51,16 @@ public abstract class Account implements java.io.Serializable {
     public abstract boolean deposit(float amount);
 
     /**
+     * This is the main method which makes use of addNum method.
+     * Returns a string with the account type, name, balance, and state (open or close)
+     * @return String with the account type, name on the account, balance, and state
+     */
+      public String toString() {
+          return "Account " + name + " has $" + balance + "and is " + getState()
+                  + "\n";
+      }
+      
+    /**
      * Takes money out of an account. If the balance falls below 0 then the
      * account is moved to an OVERDRAWN state
      * 
@@ -55,11 +70,7 @@ public abstract class Account implements java.io.Serializable {
      *         invalid state
      */
     public abstract boolean withdraw(float amount);
-
-    /**
-     * @return either "Checking" or "Savings"
-     */
-    public abstract String getType();
+    
 
     protected final State getState() {
         return state;
@@ -69,13 +80,6 @@ public abstract class Account implements java.io.Serializable {
         state = s;
     }
 
-  /**
-   * This is the main method which makes use of addNum method.
-   * Returns a string with the account type, name, balance, and state (open or close)
-   * @return String with the account type, name on the account, balance, and state
-   */
-    public String toString() {
-        return "Account " + name + " has $" + balance + "and is " + getState()
-                + "\n";
-    }
+    
+    private State state;
 }
