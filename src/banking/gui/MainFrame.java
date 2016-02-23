@@ -121,8 +121,11 @@ class MainFrame extends JFrame {
 				thisAcct = (Account)li.next();
 				sb.append(thisAcct.toString()+"\n");
 			}
-
-			JOptionPane.showMessageDialog(null, sb.toString());
+			
+			if (accounts.isEmpty()){
+				JOptionPane.showMessageDialog(null, "No accounts have saved! ");
+			}else
+			JOptionPane.showMessageDialog(null, sb.toString());	
 		}
 	}
 
