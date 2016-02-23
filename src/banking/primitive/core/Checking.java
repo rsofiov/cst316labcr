@@ -9,6 +9,7 @@ public class Checking extends Account {
 		super(name);
 	}
 
+	/* Duplicate method
     public static Checking createChecking(String name) {
         return new Checking(name);
     }
@@ -16,6 +17,7 @@ public class Checking extends Account {
 	public Checking(String name, float balance) {
 		super(name, balance);
 	}
+	*/
 
 	/**
 	 * A deposit may be made unless the Checking account is closed
